@@ -1,6 +1,6 @@
 import React from "react";
 
- function Fooo() {
+ function Footer() {
   return (
     <>
   <footer id="footer" className="footer solid-bg">
@@ -75,5 +75,5 @@ import React from "react";
  
 
   
-  export default Fooo
+  export default Footer
 
