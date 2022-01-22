@@ -1,7 +1,7 @@
 import React from "react"
  
 
-const Singup = () => {
+const Carousel = () => {
 
 return (
 <div>
@@ -14,4 +14,4 @@ return (
 
 
 } 
-export default Singup
+export default Carousel
