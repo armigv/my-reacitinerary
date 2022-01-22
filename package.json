@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "infinite-react-carousel": "^1.2.11",
     "react-router-dom": "^6.2.1",
     "tar": "^6.1.11"
   }
