@@ -1,7 +1,7 @@
 import React from "react"
-import Slider from 
-
-const Carousel = ({images}) => {
+import "../Css/css.css"
+import { Slider } from "infinite-react-carousel/lib"
+const SliderSon = ({images}) => {
 
 return (
 <section className='slider'>
@@ -19,4 +19,4 @@ return (
 	)
 }
 
-export default Carousel
+export default SliderSon

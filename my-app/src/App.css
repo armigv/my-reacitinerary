@@ -21,9 +21,9 @@ header {
   background-color: #4158d0;
   background-image: linear-gradient(
     43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
+    #002aff 0%,
+    #f50303 46%,
+    #fffb00 100%
   );
   padding: 15px 20px;
   z-index: 10;
@@ -187,9 +187,9 @@ text-align:initial;
   background-color: #4158d0;
   background-image: linear-gradient(
     43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
+    #002aff 25%,
+    #ee0000de 46%,
+    #f8f400 100%
   );
 }
 
