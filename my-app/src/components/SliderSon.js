@@ -1,12 +1,17 @@
 import React from "react"
 import "../Css/css.css"
 import { Slider } from "infinite-react-carousel/lib"
-const SliderSon = ({images}) => {
-
-return (
-<section className='slider'>
-			<h1 className='slider__title'>Carousel con infinite-react-carousel</h1>
-			<Slider className='slider__content'>
+function SliderSon({ images }) {
+	const settings = {
+		autoplay: true,
+		autoplaySpeed: 4820,
+		dots: true,
+		duration: 300
+	};
+	return (
+		<section className='slider'>
+			<h1 className='slider__title'>Yo</h1>
+			<Slider className='slider__content' {...settings}>
 				{images.map((image) => (
 					<div key={image.id} className='slider__content--item'>
 						<img src={image.image} alt={image.title} />
@@ -15,8 +20,8 @@ return (
 				))}
 			</Slider>
 		</section>
-	
-	)
+
+	);
 }
 
 export default SliderSon
