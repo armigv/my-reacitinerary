@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css"
 
  function Footer() {
   return (
@@ -24,9 +25,9 @@ import React from "react";
               </strong>
               Tenemos mucho amor para tu mascota
               <br />
-              {/*<a href="mailto:francopetchop@gmail.com.ar">francopetshop@gmail.com.ar</a></p>*/}
+             
             </p>
-            <p> 2021 - FRANCO PETSHOP</p>
+            <p> 2022 - MY ITINERARY</p>
           </div>
         </section>
         <section id="text-3" className="widget widget_text wf-cell wf-1-3">
@@ -38,26 +39,31 @@ import React from "react";
           <section className="buttons">
             <a
               href="https://es-la.facebook.com/"
+              rel="noopener noreferrer"
               target="_blank"
               className="fa fa-facebook"
             />
             <a
               href="https://twitter.com/"
+              rel="noopener noreferrer"
               target="_blank"
               className="fa fa-twitter"
             />
             <a
               href="mailto:myitinerary@gmail.com.ar"
+              rel="noopener noreferrer"
               target="_blank"
               className="fa fa-google-plus"
             />
             <a
               href="https://www.youtube.com/"
+              rel="noopener noreferrer"
               target="_blank"
               className="fa fa-youtube"
             />
             <a
               href="https://ar.linkedin.com/"
+              rel="noopener noreferrer"
               target="_blank"
               className="fa fa-linkedin"
             />

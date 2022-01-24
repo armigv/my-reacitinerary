@@ -3,7 +3,7 @@ import SliderDad from "../SliderFather";
 function Home () {
     return(
 <div>
-  <SliderDad/>  
+<SliderDad/>  
 </div>
 
 

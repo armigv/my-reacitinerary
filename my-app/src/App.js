@@ -1,10 +1,9 @@
 import './App.css';
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Footer from './components/footer';
-import City from './components/pages/city';
 import Home from './components/pages/home';
 import Navbar from './components/Navbar';
-
+import Cities from "./components/pages/cities"
 
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
 
    <Routes>
     <Route path="/inicio" element= {<Home/>}/>
-    <Route path= "/ciudades" element= {<City/>}/>
+    <Route path= "/ciudades" element= {<Cities/>}/>
     </Routes>
 
     <Footer/>
