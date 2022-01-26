@@ -20,7 +20,7 @@ import "../App.css"
               <br />
               <br />
               <strong>
-                FRANCO PETSHOP
+                My Itinerary
                 <br />
               </strong>
               Tenemos mucho amor para tu mascota

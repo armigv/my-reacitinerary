@@ -1,6 +1,6 @@
 import React from "react"
 import "../Css/css.css"
-import { Slider } from "infinite-react-carousel/lib"
+import Slider from 'infinite-react-carousel';
 function SliderSon({ images }) {
 	const settings = {
 		autoplay: true,
