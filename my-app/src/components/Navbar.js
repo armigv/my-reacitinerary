@@ -7,7 +7,7 @@ const NavBar = () => {
 return (
   
   <>
-  
+  <nav className="nav">
   <div className="container-fluid">
     <header>
       <LinkRouter to="/inicio">
@@ -30,12 +30,15 @@ return (
           </LinkRouter>
         </li>
       </ul>
-    </header>
+      </header>
     </div><div className="menu" id="menu">
       <span />
       <span />
       <span />
-    </div></>
+    </div>
+    </nav>
+    </>
+    
   )
 }
 export default NavBar
