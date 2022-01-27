@@ -26,7 +26,7 @@ return (
 
         <li className="nav-item">
 
-          <LinkRouter className="nav-link" to="/iudades">
+          <LinkRouter className="nav-link" to="/ciudades">
           </LinkRouter>
         </li>
       </ul>
