@@ -23,7 +23,6 @@ import "../App.css"
                 My Itinerary
                 <br />
               </strong>
-              Tenemos mucho amor para tu mascota
               <br />
              
             </p>

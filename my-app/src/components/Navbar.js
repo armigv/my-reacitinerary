@@ -18,15 +18,15 @@ return (
       </LinkRouter>
 
       <ul id="options">
-        {/* <li className="nav-item">
-          <LinkRouter className="nav-link" to="/Home">
+        <li className="nav-item">
+          <LinkRouter className="nav-link" to="/inicio">
 
           </LinkRouter>
-        </li> */}
+        </li>
 
         <li className="nav-item">
 
-          <LinkRouter className="nav-link" to="/ciudades">
+          <LinkRouter className="nav-link" to="/iudades">
           </LinkRouter>
         </li>
       </ul>
