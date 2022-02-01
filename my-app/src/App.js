@@ -1,4 +1,6 @@
 import './App.css';
+import "./Css/css.css";
+import "./Css/citiesfather.scss";
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Footer from './components/footer';
 import Home from './components/pages/home';

@@ -36,7 +36,7 @@ import "../App.css"
           <br />
           <br />
           <section className="buttons">
-            <a
+            {/* <a
               href="https://es-la.facebook.com/"
               rel="noopener noreferrer"
               target="_blank"
@@ -65,7 +65,7 @@ import "../App.css"
               rel="noopener noreferrer"
               target="_blank"
               className="fa fa-linkedin"
-            />
+            />  */}
           </section>
         </section>
       </div>
@@ -78,7 +78,6 @@ import "../App.css"
 
  }
  
-
+export default Footer
   
-  export default Footer
 

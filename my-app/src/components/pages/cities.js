@@ -1,17 +1,13 @@
-import React from "react"
- 
+import React from 'react';
 
-const Cities = () => {
-
-return (
-<div>
-
-
-</div>
-
-)
+import CitiesFather from '../CitiesFather';
 
 
 
-} 
-export default Cities
+export default function Cities() {
+  return( <div>
+
+<CitiesFather/>
+  </div>
+  )  
+}

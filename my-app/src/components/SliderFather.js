@@ -40,7 +40,7 @@ const images = [
 
 return (
     <div className='App'>
-        <SliderSon images={images} />
+        <SliderSon img={images} />
     </div>
 )
 

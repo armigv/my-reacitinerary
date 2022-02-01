@@ -18,23 +18,31 @@ return (
       </LinkRouter>
 
       <ul id="options">
-        <li className="nav-item">
+      
           <LinkRouter className="nav-link" to="/inicio">
-
+          <li className="nav-item">
+          <h2 className="Home">
+              Home
+            </h2>
+          </li>
           </LinkRouter>
-        </li>
+       
 
-        <li className="nav-item">
-
+      
           <LinkRouter className="nav-link" to="/ciudades">
+          <li className="nav-item">
+            <h2 className="Cities">
+              Cities
+            </h2>
+            </li>
           </LinkRouter>
-        </li>
+        
       </ul>
       </header>
-    </div><div className="menu" id="menu">
+    {/* </div><div className="menu" id="menu">
       <span />
       <span />
-      <span />
+      <span /> */}
     </div>
     </nav>
     </>
