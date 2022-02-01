@@ -4,25 +4,25 @@ import CitiesSon from "./CitiesSon";
 
 
 const CitiesFather = () => {
-  const [persons, setPersons] = useState([
+  const [cities, setCities] = useState([
     {
-      id: 1,
+      id: 6,
       img:"https://images.unsplash.com/photo-1529928520614-7c76e2d99740?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
-      title:"Baked Cod with Vegetables",
+      titles:"Baked Cod with Vegetables",
       description:"Baked Cod with Vegetables. 30 minute meal!",
       
     },
     {
-      id: 2,
+      id: 7,
       img:"https://images.unsplash.com/photo-1529928520614-7c76e2d99740?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
-      title:"Baked Cod with Vegetables",
+      titles:"Baked Cod with Vegetables",
       description:"Baked Cod with Vegetables. 30 minute meal!",
       
     },
     {
-      id: 3,
+      id: 8,
       img:"https://images.unsplash.com/photo-1529928520614-7c76e2d99740?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
-      title:"Baked Cod with Vegetables",
+      titles:"Baked Cod with Vegetables",
       description:"Baked Cod with Vegetables. 30 minute meal!",
     },
   ]);
@@ -30,13 +30,13 @@ const CitiesFather = () => {
   return (
       
     <div className="wrapper">
-      {persons.map((person) => {
+      {cities.map((citiess) => {
         return (
           <CitiesSon
-            key={person.id}
-            name={person.title}
-            img={person.img}
-            role={person.description}
+            key={citiess.id}
+            name={citiess.titles}
+            img={citiess.img}
+            role={citiess.description}
           />
         );
       })}
