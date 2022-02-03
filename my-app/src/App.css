@@ -195,8 +195,11 @@ text-align:initial;
 }
 
 .footer {
-  padding: 0;
-  margin: 0 auto;
+  position:fixed;
+   left: 0;
+  bottom: 0;
+  width: 100%;
+  
 }
 
 #footer .wf-container-footer {

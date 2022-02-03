@@ -4,6 +4,7 @@ import "../App.css"
  function Footer() {
   return (
     <>
+    
   <footer id="footer" className="footer solid-bg">
   <div className="wf-wrap">
     <div className="wf-container-footer">
@@ -72,6 +73,7 @@ import "../App.css"
     </div>
   </div>
 </footer>
+
 </>
 );
   
