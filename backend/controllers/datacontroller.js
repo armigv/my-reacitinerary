@@ -14,7 +14,8 @@ const citiesController = {GetAllData:async(req,res) =>
     }
     res.json({
         response: error ? "Error" : {cities},
-        success: error ? false:true, error: error
+        success: error ? false:true, 
+        error: error
     }
 
     )
