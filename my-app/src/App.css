@@ -175,7 +175,17 @@ header.abajo ul li a {
 .descripcion, p {
   margin: 0px;
 text-align:initial;
+
 }
+
+.cardcontainer {
+
+position: relative;
+height: 100px;
+margin-top: 100px;
+
+}
+
 
 .cards img {
   width: 140px;

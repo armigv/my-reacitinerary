@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import CitiesFather from '../CitiesFather';
+import Cards from "../CitiesCards";
 
 
 
-export default function Cities(props) {
-  console.log(props.data)
+export default function Cities() {
   return (
-    <div>
-      <CitiesFather cities={props.data}/>
+    <div className="card_container">
+      <Cards />
     </div>
-  )  
+  );
 }

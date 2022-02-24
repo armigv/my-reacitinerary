@@ -104,42 +104,28 @@ figure {
   transition: opacity 0.3s;
 }
 
-.section-with-carousel
-  .swiper-pagination-bullets
-  .swiper-pagination-bullet
-  .line {
+.section-with-carousel .swiper-pagination-bullets .swiper-pagination-bullet .line {
   width: 3px;
   height: 3px;
   background: black;
   transition: transform 0.3s;
 }
 
-.section-with-carousel
-  .swiper-pagination-bullets
-  .swiper-pagination-bullet
-  .number {
+.section-with-carousel .swiper-pagination-bullets .swiper-pagination-bullet .number {
   opacity: 0;
   transform: translateY(-7px);
   transition: all 0.3s;
 }
 
-.section-with-carousel
-  .swiper-pagination-bullets
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.section-with-carousel .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
   opacity: 1;
 }
 
-.section-with-carousel
-  .swiper-pagination-bullets
-  .swiper-pagination-bullet.swiper-pagination-bullet-active
-  .line {
+.section-with-carousel .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active .line {
   transform: scaleX(8);
 }
 
-.section-with-carousel
-  .swiper-pagination-bullets
-  .swiper-pagination-bullet.swiper-pagination-bullet-active
-  .number {
+.section-with-carousel .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active .number {
   opacity: 1;
   transform: none;
 }
@@ -171,5 +157,3 @@ figure {
     padding: 0 50px;
   }
 }
-
-
