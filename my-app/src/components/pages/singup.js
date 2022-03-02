@@ -1,17 +1,30 @@
-import React from "react"
- 
+import axios from "axios";
+import React from "react";
 
 const Singup = () => {
+  async function NewUser(e) {
 
-return (
-<div>
+    e.preventDefault() {
 
+     const NuevoUsuario =    {firstname: e.target[0].firstname.value,
+     lastname:e.target[2].lastname.value,
+     email:e.target[4].email.value,
+     password:e.target[6].password.value,
+    
+    },
+     
+    }
 
-</div>
+      console.log(Data)
+    console.log(e)
 
-)
-
-
-
-} 
-export default Singup
+    await axios.post("http://localhost:4000/api/signup", {NuevoUsuario})
+    .then(response =>
+      
+      l
+      )
+  }
+  
+  return <div></div>;
+};
+export default Singup;
