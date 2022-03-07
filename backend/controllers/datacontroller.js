@@ -8,7 +8,7 @@ const citiesController = {
       cities = await Cities.find();
     } catch (err) {
       error = err;
-      console.error(error);
+      console.log(error);
     }
     res.json({
       response: error ? "Error" : { cities },

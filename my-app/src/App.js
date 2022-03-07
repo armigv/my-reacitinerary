@@ -9,9 +9,10 @@ import Home from "./components/pages/home";
 import Navbar from "./components/Navbar";
 import Cities from "./components/pages/cities";
 import City from "./components/pages/city";
-
+import SignIn from "./components/pages/signin";
+import SingUp from "./components/pages/singup";
 function App() {
-  const [{ cities }, dispatch] = useStateValue();
+  const [{ cities, itineraries }, dispatch] = useStateValue();
 
   useEffect(() => {
     axios.get("http://localhost:4000/api/datos").then((response) => {
@@ -31,6 +32,9 @@ function App() {
         <Route path="/inicio" element={<Home />} />
         <Route path="/ciudades" element={<Cities />} />
         <Route path="/ciudad/:id" element={<City />} />
+        <Route path="/iniciosesion" element={<SignIn />} />
+        <Route path="/registro" element={<SingUp/>} />
+
       </Routes>
 
       <Footer />

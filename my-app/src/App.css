@@ -46,6 +46,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom:10%;
 }
 
 header ul {
@@ -205,12 +206,13 @@ margin-top: 100px;
 }
 
 .footer {
-  position:fixed;
-   left: 0;
-  bottom: 0;
-  width: 100%;
-  
-}
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:10%;
+
+ }
 
 #footer .wf-container-footer {
   padding-top: 20px;
@@ -239,9 +241,9 @@ margin-top: 100px;
 .footer .widget {
   box-sizing: border-box;
 }
-.footer .widget {
+/* .footer .widget {
   margin-bottom: 30px;
-}
+} */
 .footer .widget {
   color: #ffffff;
 }

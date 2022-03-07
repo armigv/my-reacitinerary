@@ -15,7 +15,7 @@ const validator = require ("../controllers/validator")
 Router.route("/datos") // "datos" parte de la URL de la consulta
   .get(GetAllData);
 
-Router.route("/itinerarios/:city").get(GetAllItineraries);
+Router.route("/itinerarie/:city").get(GetAllItineraries);
 
 Router.route("/sigup").post(nuevoUsuario);
 

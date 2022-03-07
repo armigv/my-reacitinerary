@@ -26,6 +26,20 @@ const NavBar = () => {
                   <h2 className="Cities">Cities</h2>
                 </li>
               </LinkRouter>
+
+
+              <LinkRouter className="nav-link" to="/iniciosesion">
+                <li className="nav-item">
+                  <h2 className="SignIn">SignIn</h2>
+                </li>
+              </LinkRouter>
+
+              <LinkRouter className="nav-link" to="/registro">
+                <li className="nav-item">
+                  <h2 className="SignUp">SignUp</h2>
+                </li>
+              </LinkRouter>
+
             </ul>
           </header>
           {/* </div><div className="menu" id="menu">

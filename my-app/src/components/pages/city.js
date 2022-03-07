@@ -4,20 +4,40 @@ import { useStateValue } from "../../StateProvider";
 import axios from "axios";
 
 export default function City() {
-  const { itineraries, setItineraries } = useState([]);
-  const [{ cities }, dispatch] = useStateValue();
+  const [ itineraries, setItineraries ] = useState([]);
+  const [{ cities}, dispatch] = useStateValue();
   const { id } = useParams();
-  const cityselecter = cities.filter((city) => city._id === id);
+  const cityselecter = cities.filter(city => city._id === id);
 
   useEffect(() => {
-    cityselecter.map((city) =>
+    cityselecter.map(city =>
       axios
-        .get(`http://localhost:4000/api/itineraries/${city.name}`)
-        .then((response) => setItineraries(response.data.response.itineraries))
+        .get(`http://localhost:4000/api/itinerarie/${city.name}`)
+        .then(response => setItineraries(response.data.response.itineraries)
+        )
     );
+    console.log(itineraries)
+
   }, []);
 
   console.log(cityselecter);
+console.log(itineraries)
 
-  return <div></div>;
-}
+ 
+
+
+return (
+
+  cityselecter.map (data =>{
+    console.log(data);
+
+    return (
+  <div>
+
+    
+    <h1 className="headercity">{data.name}</h1>
+    
+    </div>
+    )}))
+
+    }
