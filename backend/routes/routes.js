@@ -8,7 +8,7 @@ const { GetAllData } = citiesController; // desestructuracion del controlador de
 
 const { GetAllItineraries } = itinerariesController;
 const usercontrollers = require("../controllers/userscontroller");
-const { nuevoUsuario } = usercontrollers;
+const { nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion } = usercontrollers;
 const validator = require ("../controllers/validator")
 
 
@@ -17,6 +17,15 @@ Router.route("/datos") // "datos" parte de la URL de la consulta
 
 Router.route("/itinerarie/:city").get(GetAllItineraries);
 
-Router.route("/sigup").post(nuevoUsuario);
+Router.route("/signUp").post(validator,nuevoUsuario);
+
+Router.route("/verify/:uniqueText")
+.get(verifyEmail)
+
+Router.route("/signIn")
+    .post(accesoUsuario)
+
+Router.route("/signOut")
+    .post(cerrarSesion)
 
 module.exports = Router;

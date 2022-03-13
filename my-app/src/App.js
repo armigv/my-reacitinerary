@@ -11,6 +11,8 @@ import Cities from "./components/pages/cities";
 import City from "./components/pages/city";
 import SignIn from "./components/pages/signin";
 import SingUp from "./components/pages/singup";
+import SignOut from "./components/pages/SignOut";
+
 function App() {
   const [{ cities, itineraries }, dispatch] = useStateValue();
 
@@ -34,6 +36,7 @@ function App() {
         <Route path="/ciudad/:id" element={<City />} />
         <Route path="/iniciosesion" element={<SignIn />} />
         <Route path="/registro" element={<SingUp/>} />
+        <Route path="/signout" element={<SignOut />} />  
 
       </Routes>
 

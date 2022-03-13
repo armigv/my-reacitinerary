@@ -1,21 +1,58 @@
 import React from "react";
+import axios from "axios";
 import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { GoogleLogin } from 'react-google-login';
+
 
 const SignIn = () => {
+
+  const responseGoogle = (response) => {
+    console.log(response);
+  }
+
+
+    async function loginUser(event){
+      
+        event.preventDefault()
+        const userData = {
+          email:event.target[0].value,
+          password:event.target[1].value,
+      }
+        
+      
+            
+        await axios.post("http://localhost:4000/api/signIn",{userData})
+         .then(response=>
+         displayMessages(response.data)
+        
+        )
+        function displayMessages(data){
+          console.log(data) 
+        //   dispatch 
+       
+       
+        }
+    }
+
+
+    
 
   const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
 
   return (
+      
         <Grid>
             <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
                      <Avatar style={avatarStyle}></Avatar>
                     <h2>Sign In</h2>
                 </Grid>
+                <form noValidate onSubmit={loginUser}>
+
                 <TextField label='Username' placeholder='Enter username' fullWidth required/>
                 <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
                 <FormControlLabel
@@ -38,8 +75,17 @@ const SignIn = () => {
                         Sign Up 
                 </Link>
                 </Typography>
+                </form>
+                <GoogleLogin
+    clientId="978439282429-ogtgijbrqbrom1gq2p7enhv5l6iool4k.apps.googleusercontent.com"
+    buttonText="SignUP Google"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />,
             </Paper>
         </Grid>
+      
     )
   
 };
