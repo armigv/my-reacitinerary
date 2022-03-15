@@ -4,17 +4,19 @@ import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@materia
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { GoogleLogin } from 'react-google-login';
+import { useStateValue } from "../../StateProvider";
+import { actionType } from "../../Core/reducer";
 
 
 const SignIn = () => {
-
+  const [{ user }, dispatch] = useStateValue()
   const responseGoogle = (response) => {
     console.log(response);
   }
 
 
     async function loginUser(event){
-      
+      console.log(event)
         event.preventDefault()
         const userData = {
           email:event.target[0].value,
@@ -30,9 +32,21 @@ const SignIn = () => {
         )
         function displayMessages(data){
           console.log(data) 
-        //   dispatch 
-       
-       
+if (!data.succes) {
+  console.log(data.error)
+  
+}
+else {console.log(data.response)
+
+
+}
+
+
+          dispatch({
+            type: actionType.USER,
+            user: data.response
+
+          })
         }
     }
 
@@ -78,7 +92,7 @@ const SignIn = () => {
                 </form>
                 <GoogleLogin
     clientId="978439282429-ogtgijbrqbrom1gq2p7enhv5l6iool4k.apps.googleusercontent.com"
-    buttonText="SignUP Google"
+    buttonText="SignIn Google"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
     cookiePolicy={'single_host_origin'}

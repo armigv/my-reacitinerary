@@ -4,12 +4,12 @@ import React from "react";
 import { GoogleLogin } from 'react-google-login';
 
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
-// import Radio from '@material-ui/core/Radio';
-// import RadioGroup from '@material-ui/core/RadioGroup';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import FormControl from '@material-ui/core/FormControl';
-// import FormLabel from '@material-ui/core/FormLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 
 const SingUp = () => {
@@ -21,7 +21,7 @@ const SingUp = () => {
       lastname: response.profileObj.familyName,
       email: response.profileObj.email,
       password:response.googleId + "aB",
-      from:"Google"
+      google:true
     }
 
     await axios.post("http://localhost:4000/api/signUp",{NuevoUsuario} )

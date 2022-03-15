@@ -1,11 +1,11 @@
 export const initialState = {
   cities: [],
- 
+  user: null,
 };
 
 export const actionType = {
   CITIESDB: "CITIESDB",
-  
+  USER: "USER",
 };
 
 const reducer = (state, action) => {
@@ -16,6 +16,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         cities: action.cities,
+      };
+
+    case "USER":
+      return {
+        ...state,
+        user: action.user,
       };
 
     default:

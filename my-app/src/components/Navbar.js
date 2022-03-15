@@ -1,31 +1,8 @@
 import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
-import { useStateValue } from '../StateProvider';
-import axios from 'axios';
-
-
-
 
 
 const NavBar = () => {
-
- 
-
-    const [{ user }, dispatch] = useStateValue()
-  
-      async function cerrarCesion () {
-          const email = user.datosUser.email
-          console.log(email)
-          await axios.post("http://localhost:4000/api/signOut", {email})
-          .then(response =>
-  
-              console.log(response)
-  
-          )
-  
-      }
-  
-
   return (
     <>
       <nav className="nav">
@@ -51,7 +28,6 @@ const NavBar = () => {
                 </li>
               </LinkRouter>
 
-
               <LinkRouter className="nav-link" to="/iniciosesion">
                 <li className="nav-item">
                   <h2 className="SignIn">SignIn</h2>
@@ -63,12 +39,6 @@ const NavBar = () => {
                   <h2 className="SignUp">SignUp</h2>
                 </li>
               </LinkRouter>
-
-              <LinkRouter to="/signout">            
-            <button type="button" className="btn btn-info bg-warning  text-white ms-3 mt-2"  onClick={() => cerrarCesion()}>
-            Sign Out</button> 
-            </LinkRouter>   
-
             </ul>
           </header>
           {/* </div><div className="menu" id="menu">

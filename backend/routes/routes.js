@@ -10,7 +10,8 @@ const { GetAllItineraries } = itinerariesController;
 const usercontrollers = require("../controllers/userscontroller");
 const { nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion } = usercontrollers;
 const validator = require ("../controllers/validator")
-
+const commentController = require("")
+const {crearComentarios} = commentController
 
 Router.route("/datos") // "datos" parte de la URL de la consulta
   .get(GetAllData);
@@ -27,5 +28,8 @@ Router.route("/signIn")
 
 Router.route("/signOut")
     .post(cerrarSesion)
+
+    Router.route("/comments")
+    .post(crearComentarios)
 
 module.exports = Router;
