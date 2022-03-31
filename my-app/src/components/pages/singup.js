@@ -21,7 +21,7 @@ const SingUp = () => {
       lastname: response.profileObj.familyName,
       email: response.profileObj.email,
       password:response.googleId + "aB",
-      google:true
+      from:"google"
     }
 
     await axios.post("http://localhost:4000/api/signUp",{NuevoUsuario} )
@@ -29,17 +29,11 @@ const SingUp = () => {
 
 
       function displayMessages(data){
-        if(data.success==="falseVAL"){
-    
-          console.log(data)
-         console.log(data.response.error.details)
-
-        alert(data.response.error.details.map(error=>error.message))
-        }else if(data.success==="trueUE"){
-        
-          console.log(data)
+         
+          console.log(data);
+          alert(data.message);
         }
-       }
+       
 
 
   }
@@ -51,7 +45,7 @@ const SingUp = () => {
       lastname: event.target[1].value,
       email: event.target[2].value,
       password: event.target[3].value,
-      google:false
+      from:"signUp",
     }
 console.log(NuevoUsuario)
 console.log()
@@ -60,16 +54,7 @@ console.log()
 
 
       function displayMessages(data){
-        if(data.success==="falseVAL"){
-    
-          console.log(data)
-         console.log(data.response.error.details)
-
-        alert(data.response.error.details.map(error=>error.message))
-        }else if(data.success==="trueUE"){
-        
-          console.log(data)
-        }
+        alert(data.message);
        }
   }
   const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }
