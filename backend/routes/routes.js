@@ -19,7 +19,7 @@ Router.route("/datos") // "datos" parte de la URL de la consulta
 
 
   
-Router.route("/itinerarie/:id").get(GetItineraries);
+Router.route("/itinerarie/:city").get(GetItineraries);
 
 Router.route("/signUp").post(validator,nuevoUsuario);
 

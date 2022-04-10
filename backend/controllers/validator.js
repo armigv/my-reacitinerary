@@ -29,7 +29,7 @@ const validator =(req,res,next)=>{
 const validation = Schema.validate(req.body.NuevoUsuario,{abortEarly:false})
 
 if (validation.error){
-    return res.json({success:"falseVAL",response:validation})
+    return res.json({success:false,response:validation})
 }
 next()
 

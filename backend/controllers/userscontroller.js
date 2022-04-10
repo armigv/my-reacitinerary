@@ -49,133 +49,76 @@ const usersControllers = {
     }
   },
 
+
   nuevoUsuario: async (req, res) => {
-    const { firstname, lastname, email, password, google } =
-      req.body.NuevoUsuario; // destructuring
 
+    const { firstname, lastname, email, password, from } = req.body.NuevoUsuario
+    
     try {
-      const usuarioExiste = await User.findOne({ email });
-      console.log(req.body);
-      if (usuarioExiste) {
-        // res.json({
-        //   sucess: false,
-        //   response: "Su usuario ya existe, realice el SignIn",
-        // });
+      const UsuarioExiste = await User.findOne({ email })
 
-        /* Facebook start if */
-        // if(from !== "SignUp"){
-        //     const passwordHash = bcryptjs.hashSync(password, 10)
-        //     usuarioExiste.password= passwordHash;
-        //     usuarioExiste.emailVerificado= true;
-        //     usuarioExiste.from= from;
-        //     usuarioExiste.connected= false;
+      if (UsuarioExiste) {
+      
+       
+        if (from!=="signUp") {
+          const passwordHash = bcryptjs.hashSync(password, 10)
+          UsuarioExiste.password = passwordHash;
+          UsuarioExiste.emailVerificado = true;
+          UsuarioExiste.from= from;
+          UsuarioExiste.connected = false;
 
-        //     usuarioExiste.save();
-        //     res.json({success:true, response:"Actualizo el singin, ahora lo puedes hacer con"+ from})
-        // }else{
-        //     res.json({success:false, response:"EL nombre de usuario ya esta en uso"})
-        // }
-        /* Facebook end if */
-
-        /* Google start if */
-
-        if (google) {
-          const passwordHash = bcryptjs.hashSync(password, 10);
-          usuarioExiste.password = passwordHash;
-          usuarioExiste.emailVerificado = true;
-          usuarioExiste.google = true;
-          usuarioExiste.connected = false;
-          usuarioExiste.save();
-          res.json({
-            success: true,
-            from: "google",
-            mensaje: "Actualizo el singin, ahora lo puedes hacer con google",
-          });
-        } else {
-          res.json({
-            success: false,
-            from: "SignUp",
-            mensaje: "Este email ya esta en uso, por favor realiza singIN",
-          });
+          UsuarioExiste.save();
+          res.json({ success: true,mensaje:"We update your sign in so you can do it with " +from })
         }
-        /*google end if */
-      } /* final de if de usuario existe */ else {
-        /* start else del if de usuario existe */
-        const emailVerificado = false;
-        const uniqueText = crypto.randomBytes(15).toString("hex"); //texto randon de 15 caracteres hexadecimal
-        const passwordHash = bcryptjs.hashSync(password, 10);
-
-        const newUser = new User({
+      
+        else {
+          rep.json({ success: false, mensaje: "This email is already in use, perform the signin" })
+        }
+      }
+      else{
+        const uniqueText = crypto.randomBytes(15).toString("hex")//genera un text de 15 caracteres hexagecimal  
+        
+        const emailVerificado = false
+        const passwordHash = bcryptjs.hashSync(password, 10)
+        const NewUser = new User({
           firstname,
           lastname,
           email,
           password: passwordHash,
-          uniqueText, //busca la coincidencia del texto
+          uniqueText,
           emailVerificado,
           connected: false,
-          google,
-        });
+          from, 
+        })
+        
+        
 
-        /* Facebook start else */
+        if (from!=="signUp") {
+            NewUser.emailVerificado = true,
+            NewUser.from = from,
+            NewUser.connected = false,
+           
+            await NewUser.save()
+            res.json({ success:true,data:{ NewUser }, mensaje: "congratulations we have created your user with " + from})
+        }
 
-        // if (from !== "SignUp") {
-        //     newUser.emailVerificado=true;
-        //     newUser.from= from;
-        //     newUser.connected=false;
-
-        //     await newUser.save()
-
-        //     res.json({success:true,data:{newUser},response:"Felicitaciones hemos creado tu usuario con"+"" +from})
-        // }else{
-        //     newUser.emailVerificado=false;
-        //     newUser.from= from;
-        //     newUser.connected= false;
-
-        //     await newUser.save();
-        //     await sendEmail(email, uniqueText);
-
-        //     res.json({ success:true, response: "We have sent an e-mail to verify your e-mail address" , data:{newUser}})
-
-        // }
-
-        /* Facebook end else */
-
-        /* Google start else */
-        if (google) {
-          newUser.emailVerificado = true;
-          (newUser.google = true),
-            (newUser.connected = false),
-            await newUser.save();
-          res.json({
-            success: true,
-            from: "google",
-            mensaje: "Felicitaciones hemos creado tu usuario con google",
-            data: { newUser },
-          });
-        } else {
-          newUser.emailVerificado = false;
-          newUser.google = false;
-          newUser.connected = false;
-          await newUser.save();
+        else {
+          NewUser.emailVerificado = false;
+          NewUser.from = from;
+          NewUser.connected = false;
+          await NewUser.save();
           await sendEmail(email, uniqueText);
-          res.json({
-            success: true,
-            from: "SingUp",
-            mensaje: "We have sent an e-mail to verify your e-mail address",
-            data: { newUser },
-          });
-        } //* google end else */
-      } /* final del else de usuario existe */
-    } catch (error) {
-      /* final de try */
-      res.json({
-        success: false,
-        from: "SingUp",
-        mensaje: "EL correo ya esta en uso",
-        error: error,
-      });
+          res.json({ success: true, mensaje: "we have sent you your email", data:{NewUser} })
+
+        }
     }
-  },
+  }
+
+  catch (error) { res.json({ success: false, from: "signUp", mensaje: "The mail is already in use", error: error }) }
+ 
+},
+
+
 
   accesoUsuario: async (req, res) => {
     const { email, password } = req.body.userData;
@@ -232,7 +175,11 @@ const usersControllers = {
       }
     } catch (error) {
       console.log(error);
-      res.json({ success: false, response: null, mensaje:"a ocurrido un error intentalo mas tarde" }) 
+      res.json({
+        success: false,
+        response: null,
+        mensaje: "a ocurrido un error intentalo mas tarde",
+      });
     }
   },
 
