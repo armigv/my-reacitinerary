@@ -6,6 +6,7 @@ const itinerariesSchema = new mongoose.Schema({
   // description:{type:String,require:true},
   // price:{type:Number,require:true},
   // img: {type:String,require:true}
+  
 });
 
 const Itineraries = mongoose.model("itineraries", itinerariesSchema);

@@ -1,43 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
+import {actionType} from "../../Core/reducer";
 import axios from "axios";
 
 export default function City() {
-  const [ itineraries, setItineraries ] = useState([]);
-  const [{ cities}, dispatch] = useStateValue();
+  const [{cities,itineraries},dispath] =useStateValue() 
   const { id } = useParams();
-  const cityselecter = cities.filter(city => city._id === id);
+  // const cityselecter = cities.filter(city => city._id === id);
 
-  useEffect(() => {
-    cityselecter.map(city =>
-      axios
-        .get(`http://localhost:4000/api/itinerarie/${city.name}`)
-        .then(response => setItineraries(response.data.response.itineraries)
-        )
-    );
-    console.log(itineraries)
+//  console.log(itineraries)
+ useEffect(() => {
+  // console.log(cityselecter);
+  
+    axios
+      .get(`http://localhost:4000/api/itinerarie/${id}`)
+      .then(response =>console.log(response))
+       
+      
+  
+}, []);
 
-  }, []);
+  // console.log(cityselecter);
+  console.log(itineraries);
 
-  console.log(cityselecter);
-console.log(itineraries)
-
- 
-
-
-return (
-
-  cityselecter.map (data =>{
-    console.log(data);
-
-    return (
-  <div>
-
-    
-    <h1 className="headercity">{data.name}</h1>
-    
-    </div>
-    )}))
-
-    }
+  return (
+    // <div className="container">
+    //   {cityselecter.map((city) => (
+        <div>
+          <h1 className="headerCity">{id}</h1>
+         
+        </div>
+    //   ))}
+    // </div>
+  );
+}

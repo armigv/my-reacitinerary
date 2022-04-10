@@ -57,10 +57,10 @@ const usersControllers = {
       const usuarioExiste = await User.findOne({ email });
       console.log(req.body);
       if (usuarioExiste) {
-        res.json({
-          sucess: false,
-          response: "Su usuario ya existe, realice el SignIn",
-        });
+        // res.json({
+        //   sucess: false,
+        //   response: "Su usuario ya existe, realice el SignIn",
+        // });
 
         /* Facebook start if */
         // if(from !== "SignUp"){
@@ -89,13 +89,13 @@ const usersControllers = {
           res.json({
             success: true,
             from: "google",
-            response: "Actualizo el singin, ahora lo puedes hacer con google",
+            mensaje: "Actualizo el singin, ahora lo puedes hacer con google",
           });
         } else {
           res.json({
             success: false,
             from: "SignUp",
-            response: "Este email ya esta en uso, por favor realiza singIN",
+            mensaje: "Este email ya esta en uso, por favor realiza singIN",
           });
         }
         /*google end if */
@@ -149,7 +149,7 @@ const usersControllers = {
           res.json({
             success: true,
             from: "google",
-            response: "Felicitaciones hemos creado tu usuario con google",
+            mensaje: "Felicitaciones hemos creado tu usuario con google",
             data: { newUser },
           });
         } else {
@@ -161,7 +161,7 @@ const usersControllers = {
           res.json({
             success: true,
             from: "SingUp",
-            response: "We have sent an e-mail to verify your e-mail address",
+            mensaje: "We have sent an e-mail to verify your e-mail address",
             data: { newUser },
           });
         } //* google end else */
@@ -169,9 +169,9 @@ const usersControllers = {
     } catch (error) {
       /* final de try */
       res.json({
-        success: "falseVAL",
+        success: false,
         from: "SingUp",
-        response: "EL correo ya esta en uso",
+        mensaje: "EL correo ya esta en uso",
         error: error,
       });
     }
@@ -179,7 +179,7 @@ const usersControllers = {
 
   accesoUsuario: async (req, res) => {
     const { email, password } = req.body.userData;
-
+    console.log(req.body);
     try {
       const usuario = await User.findOne({ email });
 
@@ -187,7 +187,7 @@ const usersControllers = {
         res.json({
           success: false,
           from: "controller",
-          error: "el usuario y/o contraseña es incorrecto",
+          mensaje: "el usuario y/o contraseña es incorrecto",
         });
       } else {
         if (usuario.emailVerificado) {
@@ -208,26 +208,31 @@ const usersControllers = {
             res.json({
               success: true,
               from: "controller",
-              response: { token, datosUser },
+              response: {
+                success: true,
+                from: "controller",
+                response: { token, datosUser },
+                mensaje: "bienvenido nuevamente " + usuario.firstname,
+              },
             }); // "logueado" })
           } else {
             res.json({
               success: false,
               from: "controller",
-              error: "el usuario y/o contraseña es incorrecto",
+              mensaje: "el usuario y/o contraseña es incorrecto",
             });
           }
         } else {
           res.json({
             success: false,
             from: "controller",
-            error: "verifica tu e-mail para validarte",
+            mensaje: "verifica tu e-mail para validarte",
           });
         }
       }
     } catch (error) {
       console.log(error);
-      res.json({ success: false, response: null, error: error });
+      res.json({ success: false, response: null, mensaje:"a ocurrido un error intentalo mas tarde" }) 
     }
   },
 
@@ -240,7 +245,7 @@ const usersControllers = {
     user.connected = false;
 
     await user.save();
-    res.json({ success: true, response: "Sesión cerrada" });
+    res.json({ success: true, mensaje: "Sesión cerrada" });
   },
 };
 

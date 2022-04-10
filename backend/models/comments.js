@@ -8,6 +8,6 @@ comment:{type:String,require:true},
 
 });
 
-const Itineraries = mongoose.model("comments", commentsSchema);
+const Comments = mongoose.model("comments", commentsSchema);
 
-module.exports = Itineraries;
+module.exports = Comments;

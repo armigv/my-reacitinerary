@@ -6,7 +6,7 @@ import Cards from "../CitiesCards";
 
 export default function Cities() {
   return (
-    <div className="card_container">
+    <div>
       <Cards />
     </div>
   );

@@ -35,9 +35,8 @@ function App() {
         <Route path="/ciudades" element={<Cities />} />
         <Route path="/ciudad/:id" element={<City />} />
         <Route path="/iniciosesion" element={<SignIn />} />
-        <Route path="/registro" element={<SingUp/>} />
-        <Route path="/signout" element={<SignOut />} />  
-
+        <Route path="/registro" element={<SingUp />} />
+        <Route path="/signout" element={<SignOut />} />
       </Routes>
 
       <Footer />

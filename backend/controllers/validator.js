@@ -23,7 +23,8 @@ const validator =(req,res,next)=>{
          "string.max":"The password must not exceed 10 characters"
         }),
 
-        google:joi.boolean(),
+        // google:joi.boolean(),
+        from: joi.string() 
     })
 const validation = Schema.validate(req.body.NuevoUsuario,{abortEarly:false})
 
