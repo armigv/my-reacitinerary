@@ -11,11 +11,11 @@ function Cards() {
   return (
     <div>
       <div className="grid">
-        {filterCity.map((city) => (
+        {filterCity?.map((city) => (
           <div className="container">
             <div className="row row-cols-1 row-cols-md-3 g-4">
               <div className="box">
-                <div className="card" style={{ border: "width:18rem;" }}>
+                <div className="card-itineraries" style={{ border: "width:18rem;" }}>
                   <img
                     src={
                       process.env.PUBLIC_URL + `/imagenes/cities/${city.img}`

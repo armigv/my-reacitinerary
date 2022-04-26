@@ -1,0 +1,21 @@
+.showcase {
+    background: url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&h=650&w=940')
+      no-repeat center/cover;
+    height: 650px;
+  }
+  
+  .showcase .showcase-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 650px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .showcase .showcase-overlay h1 {
+    font-size: 36px;
+    padding-bottom: 20px;
+  }

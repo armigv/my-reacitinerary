@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+
 import { GoogleLogin } from "react-google-login";
 import { useStateValue } from "../../StateProvider";
 import { actionType } from "../../Core/reducer";
@@ -31,11 +32,11 @@ const SignIn = () => {
       console.log(data);
 
       if (!data.success) {
-        alert(data.message);
+        alert(data.response.message);
       } 
       
       else {
-        alert(data.message);
+        alert(data.response.message);
 
         dispatch({
           type: actionType.USER,
@@ -57,7 +58,7 @@ const SignIn = () => {
       email: event.target[0].value,
       password: event.target[1].value,
     };
-
+console.log(userData)
     await axios
       .post("http://localhost:4000/api/signIn", { userData })
       .then((response) => displayMessages(response.data));
@@ -65,12 +66,12 @@ const SignIn = () => {
       console.log(data);
 
       if (!data.success) {
-      alert(data.message);
+      alert(data.response.message);
       }
 
       else{
 
-      alert(data.message)
+      alert(data.response.message)
       dispatch({
         type: actionType.USER,
         user: data.response,

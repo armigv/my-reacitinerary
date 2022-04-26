@@ -1,6 +1,11 @@
 import axios from "axios";
 import React from "react";
 
+
+
+
+import { makeStyles } from "@material-ui/core/styles";
+
 import { GoogleLogin } from "react-google-login";
 
 import {
@@ -11,11 +16,8 @@ import {
   TextField,
   Button,
 } from "@material-ui/core";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
+
 import Checkbox from "@material-ui/core/Checkbox";
 
 const SingUp = () => {
@@ -59,65 +61,70 @@ const SingUp = () => {
       console.log(data);
     }
   }
+
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      backgroundImage: "url('https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&h=650&w=940')"
+    }
+    
+  }));
+
+  const classes = useStyles();
+
+
+  
   const paperStyle = { padding: "30px 20px", width: 300, margin: "20px auto" };
   const headerStyle = { margin: 0 };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
-  const marginTop = { marginTop: 5 };
 
   return (
-    <div className="form-content-right">
-      <form className="form" noValidate onSubmit={NewUser}>
-        <h1>SIGN UP</h1>
-        <div className="form-inputs">
-          <label className="form-label">Firstname</label>
-          <input
-            className="form-input"
-            type="text"
-            name="firstname"
-            placeholder="Enter firstname"
-            // value={values.firstname}
-            // onChange={handleChange}
+    <div className={classes.root}>
+    <Grid>
+      <Paper elevation={20} style={paperStyle}>
+        <Grid align="center">
+          <Avatar style={avatarStyle}>
+          </Avatar>
+          <h2 style={headerStyle}>Sign Up</h2>
+          <Typography variant="caption" gutterBottom>
+            Please fill this form to create an account !
+          </Typography>
+        </Grid>
+        <form noValidate onSubmit={NewUser}>
+          <TextField
+            fullWidth
+            label="Name"
+            placeholder="Enter your name"
+            required
           />
-        </div>
-        <div className="form-inputs">
-          <label className="form-label">Lastname</label>
-          <input
-            className="form-input"
-            type="text"
-            name="lastname"
-            placeholder="Enter lastname"
-            // value={values.lastname}
-            // onChange={handleChange}
-          />
-        </div>
-
-        <div className="form-inputs">
-          <label className="form-label">Email</label>
-          <input
-            className="form-input"
-            type="email"
-            name="email"
+          <TextField
+            fullWidth
+            label="Email"
             placeholder="Enter your email"
-            // value={values.email}
-            // onChange={handleChange}
+            required
           />
-        </div>
-        <div className="form-inputs">
-          <label className="form-label">Password</label>
-          <input
-            className="form-input"
-            type="password"
-            name="password"
-            placeholder="
-          Enter your password"
-            // value={values.password}
-            // onChange={handleChange}
-          />
-        </div>
 
-        <button className="form-input-btn" type="submit">
-          SIGN UP
-        </button>
+          <TextField
+            fullWidth
+            label="Password"
+            placeholder="Enter your password"
+            required
+          />
+          <TextField
+            fullWidth
+            label="Confirm Password"
+            placeholder="Confirm your password"
+            required
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedA" />}
+            label="I accept the terms and conditions."
+            required
+          />
+          <Button type="submit" variant="contained" color="primary">
+            Sign up
+          </Button>
+        </form>
 
         <GoogleLogin
           clientId="978439282429-ogtgijbrqbrom1gq2p7enhv5l6iool4k.apps.googleusercontent.com"
@@ -126,7 +133,8 @@ const SingUp = () => {
           onFailure={responseGoogle}
           cookiePolicy={"single_host_origin"}
         />
-      </form>
+      </Paper>
+    </Grid>
     </div>
   );
 };

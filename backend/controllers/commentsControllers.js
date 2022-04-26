@@ -1,107 +1,86 @@
 const nodemailer = require("nodemailer");
 const crypto = require("crypto");
-const User = require("../models/user.js");
+const Comments = require("../models/comments");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { response } = require("express");
 
-const commentController = {
+const commentControllers = {
   crearComentarios: async (req, res) => {
-    const { itinerary, user, message } = req.body.dataComments;
+    const { itineraries, message, user } = req.body.dataComents;
+    console.log(req.body.dataComents);
 
     new Comments({
-      itineraries: itinerary,
+      itinerary: itineraries,
       user: user,
       comment: message,
     }).save();
-
+    //  .then(response=>res.json({response}))
     let comentario;
     try {
-      comentario = await Comments.find({ itineraries: itinerary }).populate(
+      comentario = await Comments.find({ itineraries: itineraries }).populate(
         "user"
       );
-    } catch (err) {
+    } catch (error) {
       console.log(error);
     }
     res.json({
       success: true,
-      response:{comentario},
+      response: { comentario },
+      mensaje: "Your comment has been saved",
     });
-
-    await axios
-      .post("http://localhost:4000/api/signIn", { dataComments })
-      .then((response) => setComment(response.data.response.commentario));
   },
-
-
-
-
 
   obtenerComentarios: async (req, res) => {
-    const { id} = req.params.id;
+    console.log(req.body);
+    let id = req.params.id;
 
     let comentario;
     try {
-      comentario = await Comments.find({ itineraries: id}).populate(
-        "user"
-      );
-    } catch (err) {
+      comentario = await Comments.find({ itinerario: id }).populate("user");
+    } catch (error) {
       console.log(error);
     }
-    res.json({
-      success: true,
-      response:{comentario},
-    });
-
+    res.json({ success: true, response: { comentario } });
   },
 
-
-
-  
   borrarComentarios: async (req, res) => {
-    const { id} = req.params.id;
+    let id = req.params.id;
 
     let comentario;
     try {
-      comentario = await Comments.findOneAndDelete({ _id: id}).populate(
-        "user"
-      );
-    } catch (err) {
+      comentario = await Comments.findOneAndDelete({ _id: id });
+    } catch (error) {
       console.log(error);
     }
     res.json({
       success: true,
-      response:{comentario},
+      response: { comentario },
+      mensaje: "Your comment has been deleted",
     });
-
   },
 
-
-
-
-  
-  
   modificarComentarios: async (req, res) => {
-    const { id} = req.params.id;
+    let id = req.params.id;
+    console.log(req.body);
+    let newComents = { comment: req.body.data };
+
+    console.log(newComents);
 
     let comentario;
     try {
-      comentario = await Comments.findOneAndUpdate({ _id: id}).populate(
-        "user"
-      );
-    } catch (err) {
+      comentario = await Comments.findOneAndUpdate({ _id: id }, newComents, {
+        new: true,
+      });
+    } catch (error) {
       console.log(error);
     }
+
     res.json({
       success: true,
-      response:{comentario},
+      response: { comentario },
+      mensaje: "Your comment has been modified",
     });
-
-  }
-
-
-  
-
-
+  },
 };
-module.exports = commentController;
+
+module.exports = commentControllers;

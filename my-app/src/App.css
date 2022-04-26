@@ -186,13 +186,19 @@ header.abajo ul li a {
   margin-bottom: 24px;
 }
 
-.card {
+.card-itineraries{
   
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap;
   margin-bottom: 30px;
+}
+
+.card-header  {
+
+width: 450%;
+
 }
 
 

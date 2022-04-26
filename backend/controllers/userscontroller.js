@@ -53,7 +53,7 @@ const usersControllers = {
   nuevoUsuario: async (req, res) => {
 
     const { firstname, lastname, email, password, from } = req.body.NuevoUsuario
-    
+    console.log(req.body)
     try {
       const UsuarioExiste = await User.findOne({ email })
 
@@ -72,7 +72,7 @@ const usersControllers = {
         }
       
         else {
-          rep.json({ success: false, mensaje: "This email is already in use, perform the signin" })
+          res.json({ success: false, mensaje: "This email is already in use, perform the signin" })
         }
       }
       else{
@@ -99,7 +99,7 @@ const usersControllers = {
             NewUser.connected = false,
            
             await NewUser.save()
-            res.json({ success:true,data:{ NewUser }, mensaje: "congratulations we have created your user with " + from})
+            res.json({ success:true,data:{ NewUser }, message: "congratulations we have created your user with " + from})
         }
 
         else {
@@ -108,13 +108,13 @@ const usersControllers = {
           NewUser.connected = false;
           await NewUser.save();
           await sendEmail(email, uniqueText);
-          res.json({ success: true, mensaje: "we have sent you your email", data:{NewUser} })
+          res.json({ success: true, message: "we have sent you your email", data:{NewUser} })
 
         }
     }
   }
 
-  catch (error) { res.json({ success: false, from: "signUp", mensaje: "The mail is already in use", error: error }) }
+  catch (error) { res.json({ success: false, from: "signUp", message: "The mail is already in use", error: error }) }
  
 },
 
@@ -130,7 +130,7 @@ const usersControllers = {
         res.json({
           success: false,
           from: "controller",
-          mensaje: "el usuario y/o contraseña es incorrecto",
+          message: "el usuario y/o contraseña es incorrecto",
         });
       } else {
         if (usuario.emailVerificado) {
@@ -155,21 +155,21 @@ const usersControllers = {
                 success: true,
                 from: "controller",
                 response: { token, datosUser },
-                mensaje: "bienvenido nuevamente " + usuario.firstname,
+                message: "bienvenido nuevamente " + usuario.firstname,
               },
             }); // "logueado" })
           } else {
             res.json({
               success: false,
               from: "controller",
-              mensaje: "el usuario y/o contraseña es incorrecto",
+              message: "el usuario y/o contraseña es incorrecto",
             });
           }
         } else {
           res.json({
             success: false,
             from: "controller",
-            mensaje: "verifica tu e-mail para validarte",
+            message: "verifica tu e-mail para validarte",
           });
         }
       }
@@ -178,7 +178,7 @@ const usersControllers = {
       res.json({
         success: false,
         response: null,
-        mensaje: "a ocurrido un error intentalo mas tarde",
+        message: "a ocurrido un error intentalo mas tarde",
       });
     }
   },
@@ -192,7 +192,7 @@ const usersControllers = {
     user.connected = false;
 
     await user.save();
-    res.json({ success: true, mensaje: "Sesión cerrada" });
+    res.json({ success: true, message: "Sesión cerrada" });
   },
 };
 
