@@ -40,7 +40,7 @@ const usersControllers = {
     if (user) {
       user.emailVerificado = true;
       await user.save();
-      res.redirect("http://localhost:3000/signIn");
+      res.redirect("http://localhost:3000/iniciosesion");
     } else {
       res.json({
         success: false,
@@ -49,37 +49,37 @@ const usersControllers = {
     }
   },
 
-
   nuevoUsuario: async (req, res) => {
-
-    const { firstname, lastname, email, password, from } = req.body.NuevoUsuario
-    console.log(req.body)
+    const { firstname, lastname, email, password, from } =
+      req.body.NuevoUsuario;
+    console.log(req.body);
     try {
-      const UsuarioExiste = await User.findOne({ email })
+      const UsuarioExiste = await User.findOne({ email });
 
       if (UsuarioExiste) {
-      
-       
-        if (from!=="signUp") {
-          const passwordHash = bcryptjs.hashSync(password, 10)
+        if (from !== "signUp") {
+          const passwordHash = bcryptjs.hashSync(password, 10);
           UsuarioExiste.password = passwordHash;
           UsuarioExiste.emailVerificado = true;
-          UsuarioExiste.from= from;
+          UsuarioExiste.from = from;
           UsuarioExiste.connected = false;
 
           UsuarioExiste.save();
-          res.json({ success: true,mensaje:"We update your sign in so you can do it with " +from })
+          res.json({
+            success: true,
+            mensaje: "We update your sign in so you can do it with " + from,
+          });
+        } else {
+          res.json({
+            success: false,
+            mensaje: "This email is already in use, perform the signin",
+          });
         }
-      
-        else {
-          res.json({ success: false, mensaje: "This email is already in use, perform the signin" })
-        }
-      }
-      else{
-        const uniqueText = crypto.randomBytes(15).toString("hex")//genera un text de 15 caracteres hexagecimal  
-        
-        const emailVerificado = false
-        const passwordHash = bcryptjs.hashSync(password, 10)
+      } else {
+        const uniqueText = crypto.randomBytes(15).toString("hex"); //genera un text de 15 caracteres hexagecimal
+
+        const emailVerificado = false;
+        const passwordHash = bcryptjs.hashSync(password, 10);
         const NewUser = new User({
           firstname,
           lastname,
@@ -88,37 +88,41 @@ const usersControllers = {
           uniqueText,
           emailVerificado,
           connected: false,
-          from, 
-        })
-        
-        
+          from,
+        });
 
-        if (from!=="signUp") {
-            NewUser.emailVerificado = true,
-            NewUser.from = from,
-            NewUser.connected = false,
-           
-            await NewUser.save()
-            res.json({ success:true,data:{ NewUser }, message: "congratulations we have created your user with " + from})
-        }
-
-        else {
+        if (from !== "signUp") {
+          (NewUser.emailVerificado = true),
+            (NewUser.from = from),
+            (NewUser.connected = false),
+            await NewUser.save();
+          res.json({
+            success: true,
+            data: { NewUser },
+            message: "congratulations we have created your user with " + from,
+          });
+        } else {
           NewUser.emailVerificado = false;
           NewUser.from = from;
           NewUser.connected = false;
           await NewUser.save();
           await sendEmail(email, uniqueText);
-          res.json({ success: true, message: "we have sent you your email", data:{NewUser} })
-
+          res.json({
+            success: true,
+            message: "we have sent you your email",
+            data: { NewUser },
+          });
         }
+      }
+    } catch (error) {
+      res.json({
+        success: false,
+        from: "signUp",
+        message: "The mail is already in use",
+        error: error,
+      });
     }
-  }
-
-  catch (error) { res.json({ success: false, from: "signUp", message: "The mail is already in use", error: error }) }
- 
-},
-
-
+  },
 
   accesoUsuario: async (req, res) => {
     const { email, password } = req.body.userData;
@@ -140,7 +144,6 @@ const usersControllers = {
           );
 
           if (passwordCoincide) {
-            const token = jwt.sign({ ...usuario }, process.env.SECRETKEY);
             const datosUser = {
               firstName: usuario.firstName,
               lastName: usuario.lastName,
@@ -148,6 +151,10 @@ const usersControllers = {
             };
             usuario.connected = true;
             await usuario.save();
+            const token = jwt.sign({ ...datosUser }, process.env.SECRETKEY, {
+              expiresIn: 60 * 60 * 24,
+            });
+
             res.json({
               success: true,
               from: "controller",
@@ -193,6 +200,26 @@ const usersControllers = {
 
     await user.save();
     res.json({ success: true, message: "Sesión cerrada" });
+  },
+
+  verificarToken: async (req, res) => {
+    if (!req.error) {
+      res.json({
+        success: true,
+        respuesta: {
+          firstname: req.user.firstname,
+          lastname: req.user.lastname,
+          email: req.user.email,
+          id: req.user.id,
+        },
+        response: "bienvenido nuevamente " + req.user.firstname,
+      });
+    } else {
+      res.json({
+        success: false,
+        response: "Por favor realiza nuevamente sign in",
+      });
+    }
   },
 };
 

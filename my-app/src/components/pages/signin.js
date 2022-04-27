@@ -18,24 +18,26 @@ import { actionType } from "../../Core/reducer";
 
 const SignIn = () => {
   const [{ user }, dispatch] = useStateValue();
+
   const responseGoogle = (response) => {
     const userData = {
-      email: response.profileObj.email,
-      password: response.googleId + "aB",
+      email: response?.profileObj?.email,
+      password: response?.googleId + "aB",
       from: "google",
     };
+
     axios
       .post("http://localhost:4000/api/signIn", { userData })
       .then((response) => displayMessages(response.data));
-    function displayMessages(data) {
 
+    function displayMessages(data) {
       console.log(data);
 
       if (!data.success) {
         alert(data.response.message);
-      } 
-      
-      else {
+      } else {
+        localStorage.setItem("token", data.response.token);
+
         alert(data.response.message);
 
         dispatch({
@@ -47,10 +49,6 @@ const SignIn = () => {
     console.log(response);
   };
 
-
-
-  
-
   async function loginUser(event) {
     console.log(event);
     event.preventDefault();
@@ -58,7 +56,7 @@ const SignIn = () => {
       email: event.target[0].value,
       password: event.target[1].value,
     };
-console.log(userData)
+    console.log(userData);
     await axios
       .post("http://localhost:4000/api/signIn", { userData })
       .then((response) => displayMessages(response.data));
@@ -66,17 +64,16 @@ console.log(userData)
       console.log(data);
 
       if (!data.success) {
-      alert(data.response.message);
+        alert(data.response.message);
+      } else {
+        localStorage.setItem("token", data.response.token);
+
+        alert(data.response.message);
+        dispatch({
+          type: actionType.USER,
+          user: data.response,
+        });
       }
-
-      else{
-
-      alert(data.response.message)
-      dispatch({
-        type: actionType.USER,
-        user: data.response,
-      });
-    }
     }
   }
 
@@ -138,7 +135,6 @@ console.log(userData)
           onFailure={responseGoogle}
           cookiePolicy={"single_host_origin"}
         />
-        ,
       </Paper>
     </Grid>
   );
