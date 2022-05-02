@@ -91,7 +91,7 @@ export default function City(props) {
                     <div key={itineraries._id} className="card-content-item">
                       <h2 className="card-title">{itineraries.place}</h2>
                       <div className="like-style">
-              <Likes likes={itineraries.likes} id={itineraries._id}/>
+              <Likes dislikelike={itineraries.likes} id={itineraries._id}/>
               </div>
                       <p className="card-text">{itineraries.description}</p>
                       <p className="card-text" style={{ alignitems: "right;" }}>

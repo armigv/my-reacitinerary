@@ -148,6 +148,8 @@ const usersControllers = {
               firstName: usuario.firstName,
               lastName: usuario.lastName,
               email: usuario.email,
+              id: usuario._id,
+
             };
             usuario.connected = true;
             await usuario.save();
@@ -161,7 +163,7 @@ const usersControllers = {
               response: {
                 success: true,
                 from: "controller",
-                response: { token, datosUser },
+                response: { token, ...datosUser  },
                 message: "bienvenido nuevamente " + usuario.firstname,
               },
             }); // "logueado" })

@@ -4,17 +4,21 @@ import { Link as LinkRouter } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { actionType } from "../../Core/reducer";
 import { Nav, NavDropdown } from "react-bootstrap";
-
+import {FaUserCircle} from 'react-icons/fa'
+import Logo from "../../img/fire-exit-sign-emergency-exit-1638502.jpg"
+import "../../App.css"
 import axios from "axios";
 
 const SignOut = () => {
   const [{ user }, dispatch] = useStateValue();
   async function cerrarSesion() {
-    const email = user.datosUser.email;
+    const email = user.response.email;
     await axios
       .post("http://localhost:4000/api/signOut", { email })
       .then(response => {
         console.log(response.data.response);
+        localStorage.removeItem("token")
+
         dispatch({
             type:actionType.USER,
             user:null
@@ -30,12 +34,14 @@ const SignOut = () => {
 <div className="nav-link active hover-underline-animation" aria-current="page" to="/singIn">Sing Out </div> */}
 
 {
-    !user ?<div className="nav-link active hover-underline-animation" aria-current="page" >
-        <LinkRouter to='/iniciarsesion' className="nav-link-iniciarsesion">
+    !user?<div className="nav-link active hover-underline-animation" aria-current="page" >
+        <LinkRouter to='/iniciosesion' className="nav-link-iniciosesion">
+        <FaUserCircle/>
+
     </LinkRouter>
     </div>
     :
-    <div className="nav-link active hover-underline-animation " aria-current="page" onClick={cerrarSesion}><img className="logueado" src=""/> </div>
+    <div className="nav-link active hover-underline-animation " aria-current="page" onClick={cerrarSesion}><img className="logueado" src={Logo}/> </div>
 }
 
 </div>

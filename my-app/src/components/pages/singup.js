@@ -93,27 +93,27 @@ const SingUp = () => {
         <form noValidate onSubmit={NewUser}>
           <TextField
             fullWidth
-            label="Name"
-            placeholder="Enter your name"
+            label="FirstName"
+            placeholder="Enter your FirstName"
             required
           />
+          <TextField
+            fullWidth
+            label="LastName"
+            placeholder="Enter your LastName"
+            required
+          />
+
           <TextField
             fullWidth
             label="Email"
             placeholder="Enter your email"
             required
           />
-
           <TextField
             fullWidth
             label="Password"
             placeholder="Enter your password"
-            required
-          />
-          <TextField
-            fullWidth
-            label="Confirm Password"
-            placeholder="Confirm your password"
             required
           />
           <FormControlLabel

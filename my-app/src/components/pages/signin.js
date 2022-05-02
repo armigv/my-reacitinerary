@@ -21,8 +21,8 @@ const SignIn = () => {
 
   const responseGoogle = (response) => {
     const userData = {
-      email: response?.profileObj?.email,
-      password: response?.googleId + "aB",
+      email: response.profileObj.email,
+      password: response.googleId + "aB",
       from: "google",
     };
 
@@ -36,7 +36,7 @@ const SignIn = () => {
       if (!data.success) {
         alert(data.response.message);
       } else {
-        localStorage.setItem("token", data.response.token);
+        localStorage.setItem("token", data.response.response.token);
 
         alert(data.response.message);
 
@@ -66,7 +66,7 @@ const SignIn = () => {
       if (!data.success) {
         alert(data.response.message);
       } else {
-        localStorage.setItem("token", data.response.token);
+        localStorage.setItem("token", data.response.response.token);
 
         alert(data.response.message);
         dispatch({

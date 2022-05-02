@@ -36,7 +36,6 @@ function App() {
         <Route path="/ciudad/:id" element={<City />} />
         <Route path="/iniciosesion" element={<SignIn />} />
         <Route path="/registro" element={<SingUp />} />
-        <Route path="/cerrarsesion" element={<SignOut />} />
       </Routes>
 
       <Footer />

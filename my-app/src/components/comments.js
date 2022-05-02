@@ -196,7 +196,7 @@ export default function Coments(props) {
 
 
         const dataComents = {
-            itinerario: props.itinerario,
+            itinerarie: props.itinerario,
             message: event.target[0].value,
             user: user.id
         }
@@ -206,7 +206,7 @@ export default function Coments(props) {
     }
 
     useEffect(() => {
-        let id = ""
+        let id = props.itinerario
         axios.get(`http://localhost:4000/api/coments/${id}`)
             .then(response =>
                 setComment(response.data.response.comentario))

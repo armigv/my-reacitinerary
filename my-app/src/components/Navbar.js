@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as LinkRouter } from "react-router-dom";
+import SignOut from "./pages/SignOut";
 
 
 const NavBar = () => {
@@ -37,6 +38,12 @@ const NavBar = () => {
               <LinkRouter className="nav-link" to="/registro">
                 <li className="nav-item">
                   <h2 className="SignUp">SignUp</h2>
+                </li>
+              </LinkRouter>
+
+              <LinkRouter className="nav-link" to="/cerrarsesion">
+                <li className="nav-item">
+                  <h2 className="SignOut">{<SignOut />}</h2>
                 </li>
               </LinkRouter>
             </ul>

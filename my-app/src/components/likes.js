@@ -10,7 +10,7 @@ function Likes(props) {
 
     const [{ user }, dispatch] = useStateValue()
 
-    const [likes, setLikes] = useState(props.likes)
+    const [likes, setLikes] = useState(props.dislikelike)
 
     console.log(props)
     console.log(user)

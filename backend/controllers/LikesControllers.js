@@ -6,7 +6,7 @@ const LikesControllers = {
 
 GetLikes:async(req,res)=>{
     const id=req.params.id;
-    const user=req.user.id
+    const user=req.body.id
     let like
     console.log(id)
     console.log(user)
@@ -27,7 +27,7 @@ GetLikes:async(req,res)=>{
         }
     } catch (err) {
         error=err
-        res.json({success:false,resposne:error})
+        res.json({success:false,response:error})
         
     }
 

@@ -107,17 +107,17 @@ const comentsControllers = {
 
 
     cargaComentarios: async (req, res) => {
-        let { itinerario, message, user } = req.body.dataComents
+        let { itinerarie, message, user } = req.body.dataComents
         console.log(req.body.dataComents)
 
         new Comments({
-            itinerario: itinerario,
+            itinerarie: itinerarie,
             user: user,
             comment: message
         }).save()
         let comentario
         try {
-            comentario = await Comments.find({ itinerario: itinerario }).populate("user")
+            comentario = await Comments.find({ itinerarie: itinerarie }).populate("user")
 
         } catch (error) {
             console.log(error)
@@ -133,7 +133,7 @@ const comentsControllers = {
 
         let comentario
         try {
-            comentario = await Comments.find({ itinerario: id }).populate("user")
+            comentario = await Comments.find({ itinerarie: id }).populate("user")
 
         } catch (error) {
             console.log(error)

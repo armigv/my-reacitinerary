@@ -9,7 +9,7 @@ const { GetItineraries } = itinerariesController;
 const {GetLikes} = LikesControllers;
 
 const usercontrollers = require("../controllers/userscontroller");
-const { nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion } = usercontrollers;
+const { nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion,verificarToken} = usercontrollers;
 
 const validator = require ("../controllers/validator")
 
@@ -52,6 +52,9 @@ Router.route("/coments/:id")
 .get(obtenerComentarios)
 .delete(borrarComentario)
 .put(modificarComentario)
+
+Router.route("/signintoken")
+.get(verificarToken)
 
 
 Router.route("/likesdislikes/:id")
