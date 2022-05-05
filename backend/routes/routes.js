@@ -1,4 +1,6 @@
 const Router = require("express").Router();
+const passport=require("../config/passport")
+
 
 const citiesController = require("../controllers/datacontroller");
 const itinerariesController = require("../controllers/itinerariescontrollers");
@@ -54,8 +56,7 @@ Router.route("/coments/:id")
 .put(modificarComentario)
 
 Router.route("/signintoken")
-.get(verificarToken)
-
+.get(passport.authenticate("jwt",{session:false}),verificarToken)
 
 Router.route("/likesdislikes/:id")
 .put(GetLikes)

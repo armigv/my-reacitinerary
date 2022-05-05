@@ -60,6 +60,7 @@ const SignIn = () => {
     await axios
       .post("http://localhost:4000/api/signIn", { userData })
       .then((response) => displayMessages(response.data));
+      
     function displayMessages(data) {
       console.log(data);
 

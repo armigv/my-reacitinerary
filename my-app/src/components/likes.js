@@ -17,8 +17,12 @@ function Likes(props) {
 
 
     const likeDislike = async () => {
+        const token = localStorage.getItem("token")
+
         await axios.put(`http://localhost:4000/api/likesdislikes/${props.id}`, {}, {
-            
+            headers: {
+                "Authorization": "Bearer " + token
+            }
         })
             .then(response =>
                 setLikes(response.data.response))

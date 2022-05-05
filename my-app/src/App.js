@@ -23,6 +23,29 @@ function App() {
         cities: response.data.response.cities,
       });
     });
+
+    if (localStorage.getItem("token") !== null) {
+      const token = localStorage.getItem("token")
+      const user = axios.get("http://localhost:4000/api/signintoken", {
+        headers: {
+          "Authorization": "Bearer " + token
+        }
+      })
+
+        .then(user => {
+          if (user.data.success) {
+            dispatch({
+              type: actionType.USER,
+              user: user.data,
+            })
+          } else {
+            localStorage.removeItem("token")
+          }
+        })
+    }
+
+
+
   }, []);
 
   return (

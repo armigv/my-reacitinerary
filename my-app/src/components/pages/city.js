@@ -47,7 +47,7 @@ export default function City(props) {
                   <div className="card-body">
                     <div key={header._id} className="card-content-item">
                       <h2 className="card-title">{header.name}</h2>
-                      <p className="card-text">{header.places}</p>
+                      <p className="card-text">{header.description}</p>
                     </div>
                   </div>
                 </div>

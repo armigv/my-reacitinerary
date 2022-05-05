@@ -164,7 +164,7 @@ const usersControllers = {
                 success: true,
                 from: "controller",
                 response: { token, ...datosUser  },
-                message: "bienvenido nuevamente " + usuario.firstname,
+                message: "Bienvenido nuevamente " + usuario.firstname,
               },
             }); // "logueado" })
           } else {
@@ -198,23 +198,22 @@ const usersControllers = {
 
     const user = await User.findOne({ email });
 
-    user.connected = false;
-
+    user.connected = false
     await user.save();
-    res.json({ success: true, message: "Sesión cerrada" });
+    res.json({ success: true, message: "Sesión Cerrada" });
   },
 
   verificarToken: async (req, res) => {
     if (!req.error) {
       res.json({
         success: true,
-        respuesta: {
+        dataUser: {
           firstname: req.user.firstname,
           lastname: req.user.lastname,
           email: req.user.email,
           id: req.user.id,
         },
-        response: "bienvenido nuevamente " + req.user.firstname,
+        message: "Bienvenido nuevamente " + req.user.firstname,
       });
     } else {
       res.json({
