@@ -19,7 +19,7 @@ function Likes(props) {
     const likeDislike = async () => {
         const token = localStorage.getItem("token")
 
-        await axios.put(`http://localhost:4000/api/likesdislikes/${props.id}`, {}, {
+        await axios.put(`https://my-reacitinerary.herokuapp.com/api/likesdislikes/${props.id}`, {}, {
             headers: {
                 "Authorization": "Bearer " + token
             }

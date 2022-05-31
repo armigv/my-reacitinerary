@@ -17,7 +17,7 @@ function App() {
   const [{ cities, itineraries }, dispatch] = useStateValue();
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/datos").then((response) => {
+    axios.get("https://my-reacitinerary.herokuapp.com/api/datos").then((response) => {
       dispatch({
         type: actionType.CITIESDB,
         cities: response.data.response.cities,
@@ -29,7 +29,7 @@ function App() {
 
     if (localStorage.getItem("token") !== null) {
       const token = localStorage.getItem("token")
-      const user = axios.get("http://localhost:4000/api/signintoken", {
+      const user = axios.get("https://my-reacitinerary.herokuapp.com/api/signintoken", {
         headers: {
           "Authorization": "Bearer " + token
         }

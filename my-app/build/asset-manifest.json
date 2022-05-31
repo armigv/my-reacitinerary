@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2066a35b.css",
+    "main.js": "/static/js/main.e871c25b.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/fire-exit-sign-emergency-exit-1638502.jpg": "/static/media/fire-exit-sign-emergency-exit-1638502.b470a05d647243938b87.jpg",
+    "index.html": "/index.html",
+    "main.2066a35b.css.map": "/static/css/main.2066a35b.css.map",
+    "main.e871c25b.js.map": "/static/js/main.e871c25b.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2066a35b.css",
+    "static/js/main.e871c25b.js"
+  ]
+}

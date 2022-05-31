@@ -18,7 +18,7 @@ const SignOut = () => {
     const email = user.response.email;
 
     await axios
-      .post("http://localhost:4000/api/signOut", { email })
+      .post("https://my-reacitinerary.herokuapp.com/api/signOut", { email })
       .then((response) => {
         console.log(response.data.message);
         if (response.data.success) {

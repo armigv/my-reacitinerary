@@ -32,7 +32,7 @@ const SingUp = () => {
     };
 
     await axios
-      .post("http://localhost:4000/api/signUp", { NuevoUsuario })
+      .post("https://my-reacitinerary.herokuapp.com/api/signUp", { NuevoUsuario })
       .then((response) => displayMessages(response.data));
 
     function displayMessages(data) {
@@ -53,7 +53,7 @@ const SingUp = () => {
     console.log(NuevoUsuario);
     console.log();
     await axios
-      .post("http://localhost:4000/api/signUp", { NuevoUsuario })
+      .post("https://my-reacitinerary.herokuapp.com/api/signUp", { NuevoUsuario })
       .then((response) => displayMessages(response.data));
 
     function displayMessages(data) {

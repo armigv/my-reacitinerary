@@ -24,14 +24,14 @@ export default function City(props) {
     // console.log(cityselecter);
     cityselecter.map((city) =>
       axios
-        .get(`http://localhost:4000/api/itinerarie/${city.name}`)
+        .get(`https://my-reacitinerary.herokuapp.com/api/itinerarie/${city.name}`)
         .then((response) => setItineraries(response.data.response.itineraries))
     );
 
 
     // itinerariesreload.map((itine) =>
     // axios
-    // .get(`http://localhost:4000/api/itinerarie/${itine.name}`)
+    // .get(`https://my-reacitinerary.herokuapp.com/api/itinerarie/${itine.name}`)
     // .then((response)=> setItineraries(response.data.response.itineraries))
     // )
 
