@@ -22,6 +22,9 @@ function App() {
         type: actionType.CITIESDB,
         cities: response.data.response.cities,
       });
+
+  
+
     });
 
     if (localStorage.getItem("token") !== null) {

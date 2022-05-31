@@ -60,7 +60,7 @@ const SignIn = () => {
     await axios
       .post("http://localhost:4000/api/signIn", { userData })
       .then((response) => displayMessages(response.data));
-      
+
     function displayMessages(data) {
       console.log(data);
 
@@ -130,7 +130,7 @@ const SignIn = () => {
           </Typography>
         </form>
         <GoogleLogin
-          clientId="978439282429-ogtgijbrqbrom1gq2p7enhv5l6iool4k.apps.googleusercontent.com"
+          clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           buttonText="SignIn Google"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}

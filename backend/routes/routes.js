@@ -16,7 +16,6 @@ const { nuevoUsuario, verifyEmail, accesoUsuario, cerrarSesion,verificarToken} =
 const validator = require ("../controllers/validator")
 
 const comentariosControllers = require("../controllers/commentsControllers");
-// const {crearComentarios,obtenerComentarios,borrarComentarios,modificarComentarios} = commentController;
 const { cargaComentarios,obtenerComentarios,borrarComentario,modificarComentario } = comentariosControllers
 
 
@@ -38,14 +37,7 @@ Router.route("/signIn")
 Router.route("/signOut")
     .post(cerrarSesion)
 
-    // Router.route("/comments")
-    // .post(crearComentarios)
-
-    // Router.route("/comments/:id")
-    // .get(obtenerComentarios)
-    // .delete(borrarComentarios)
-    // .put(modificarComentarios)
-
+    
 
     Router.route("/coments")
 .post(cargaComentarios)
@@ -59,6 +51,6 @@ Router.route("/signintoken")
 .get(passport.authenticate("jwt",{session:false}),verificarToken)
 
 Router.route("/likesdislikes/:id")
-.put(GetLikes)
+.put(passport.authenticate("jwt",{session:false}),GetLikes)
 
 module.exports = Router;

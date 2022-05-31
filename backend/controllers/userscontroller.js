@@ -12,7 +12,7 @@ async function sendEmail(email, uniqueText) {
     secure: true,
     auth: {
       user: "ajgy94109@gmail.com",
-      pass: "prueba123",
+      pass: process.env.NODEMAILER,
     },
   });
 
@@ -207,7 +207,7 @@ const usersControllers = {
     if (!req.error) {
       res.json({
         success: true,
-        dataUser: {
+        response: {
           firstname: req.user.firstname,
           lastname: req.user.lastname,
           email: req.user.email,

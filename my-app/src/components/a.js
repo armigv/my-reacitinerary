@@ -1,34 +1,31 @@
-<div className="dropdown">
-  <button
-    data-toggle="dropdown"
-    aria-haspopup="true"
-    aria-expanded="false"
-    type="button"
-    className="btn btn bg-transparent"
-  >
-    <img
-      src={imgCompassLog}
-      width="40"
-      height="40"
-      alt="ícono de Logueo SignIn y SignUp"
-    />
-  </button>
-  <div className="dropdown-menu dropdown-menu-right">
-    {" "}
-    {!user ? (
-      <Linkrouter className="dropdown-item" to="/cardSignIn">
-        Sign In
-      </Linkrouter>
-    ) : (
-      <div className="dropdown-item" onClick={() => cerrarCesion()}>
-        <Linkrouter className="dropdown-item" to="/">
-          Sign Out
-        </Linkrouter>
+{/* <LinkRouter to={`/ciudad/${city._id}`}>
+<button className="btn btn-primary">View more</button>
+</LinkRouter> */}
+
+
+
+
+<div className="container">
+<div className="row row-cols-1 row-cols-md-3 g-4">
+  <div className="box">
+    <div className="card-itineraries" style={{ border: "width:18rem;" }}>
+      <img
+        src={
+          process.env.PUBLIC_URL + `/imagenes/cities/${city.img}`
+        }
+        className="card-img-top"
+        alt={city.name}
+      />
+      <div className="card-body">
+        <div key={city._id} className="card-content-item">
+          <h2 className="card-title">{city.name}</h2>
+          <p className="card-text">{city.description}</p>
+        </div>
+        <LinkRouter to={`/ciudad/${city._id}`}>
+          <button className="btn btn-primary">View more</button>
+        </LinkRouter>
       </div>
-    )}{" "}
-    <div className="dropdown-divider"></div>
-    <Linkrouter className="dropdown-item" to="/cardSignUp">
-      Sign Up
-    </Linkrouter>
+    </div>
   </div>
-</div>;
+</div>
+</div>

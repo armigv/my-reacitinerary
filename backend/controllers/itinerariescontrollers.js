@@ -25,7 +25,7 @@ const itinerariesController = {
             error:error
         })
 
-    }  // pide un requrimiento y da una respuesta
+    }  // pide un requerimiento y da una respuesta
 }
 
 module.exports = itinerariesController;

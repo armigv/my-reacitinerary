@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 import { Link as LinkRouter } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
@@ -14,9 +14,8 @@ const SignOut = () => {
 
   async function cerrarSesion() {
 
-    const email = user.response.email ? user?.response.email : user.dataUser.email
-
-
+    
+    const email = user.response.email;
 
     await axios
       .post("http://localhost:4000/api/signOut", { email })

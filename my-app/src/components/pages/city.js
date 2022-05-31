@@ -14,6 +14,8 @@ export default function City(props) {
   const [{ cities }, dispath] = useStateValue();
   const { id } = useParams();
   const cityselecter = cities.filter((city) => city._id == id);
+  // const itinerariesreload = itineraries.filter((itine) => itine._id == id)
+  
   const itineselecter = itineraries.filter(
     (itine) => itine.about === itine.about
   );
@@ -25,6 +27,14 @@ export default function City(props) {
         .get(`http://localhost:4000/api/itinerarie/${city.name}`)
         .then((response) => setItineraries(response.data.response.itineraries))
     );
+
+
+    // itinerariesreload.map((itine) =>
+    // axios
+    // .get(`http://localhost:4000/api/itinerarie/${itine.name}`)
+    // .then((response)=> setItineraries(response.data.response.itineraries))
+    // )
+
   }, []);
   console.log(cityselecter);
   console.log(itineraries);
@@ -99,7 +109,7 @@ export default function City(props) {
                       </p>
 
                       <div className="card-comments">
-                        <Coments itinerario={itineraries._id} />
+                        <Coments itinerary={itineraries._id} />
                       </div>
                       
                     </div>
