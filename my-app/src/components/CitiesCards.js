@@ -49,6 +49,7 @@ function Cards(checked) {
          <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
          <Card className={classes.root}>
            <CardMedia
+           component={"img"}
              className={classes.media}
              image={process.env.PUBLIC_URL + `/imagenes/cities/${city.img}`}
            />

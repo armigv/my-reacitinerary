@@ -1,0 +1,370 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/1SjsVcGO2T2cCrhlhXi8gxQl7jx.jpg",
+            "genre_ids": [
+                16,
+                28,
+                35,
+                878
+            ],
+            "id": 474395,
+            "original_language": "en",
+            "original_title": "Teen Titans Go! To the Movies",
+            "overview": "All the major DC superheroes are starring in their own films, all but the Teen Titans, so Robin is determined to remedy this situation by getting over his role as a sidekick and becoming a movie star. Thus, with a few madcap ideas and an inspirational song in their hearts, the Teen Titans head to Hollywood to fulfill their dreams.",
+            "popularity": 28.207,
+            "poster_path": "/mFHihhE9hlvJEk2f1AqdLRaYHd6.jpg",
+            "release_date": "2018-07-27",
+            "title": "Teen Titans Go! To the Movies",
+            "video": false,
+            "vote_average": 7.4,
+            "vote_count": 937
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/5cnbmWWnzC2L0CbOYZDeCWbHHJP.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 324558,
+            "original_language": "en",
+            "original_title": "X-Rated: The Greatest Adult Movies of All Time",
+            "overview": "The evolution of adult cinema through the most influential films in history, a journey that begins in the 1970s and ends nowadays. An in-depth analysis of the success of the most prestigious erotic films, their impact on industry and society, and their influence on cinema and contemporary culture.",
+            "popularity": 30.604,
+            "poster_path": "/uYzHkzZPp84B7nHOKaJZWjyGFUL.jpg",
+            "release_date": "2015-02-06",
+            "title": "X-Rated: The Greatest Adult Movies of All Time",
+            "video": false,
+            "vote_average": 5.9,
+            "vote_count": 119
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                99,
+                28
+            ],
+            "id": 68996,
+            "original_language": "en",
+            "original_title": "Ultimate Fights from the Movies",
+            "overview": "In their second film compilation following their 'Boogeymen:The Killer Compilation' series, FlixMix takes you into the history of action movies from Hollywood to Hong Kong cinema that spans a 20-year period. This one features action scenes from 16 action-packed movies featuring action gurus, Jet Li, Michelle Yeoh, Chow Yun-Fat, Jackie Chan, Jean-Claude Van Damme and many more.",
+            "popularity": 7.696,
+            "poster_path": "/zMGmnxe7Lap6Ek1ZxIzdAdbuJeJ.jpg",
+            "release_date": "2002-04-16",
+            "title": "Ultimate Fights from the Movies",
+            "video": true,
+            "vote_average": 4.9,
+            "vote_count": 24
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                35
+            ],
+            "id": 411804,
+            "original_language": "en",
+            "original_title": "Uncensored Movies",
+            "overview": "A morals reformer returns from Hollywood to his small town, and shows his fellow citizens the results of his investigation.",
+            "popularity": 3.628,
+            "poster_path": null,
+            "release_date": "1923-12-09",
+            "title": "Uncensored Movies",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/4HfcfbDkwgDYJcm2eInHStYpUkG.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 622146,
+            "original_language": "en",
+            "original_title": "Michael Jackson's Private Home Movies",
+            "overview": "",
+            "popularity": 3.521,
+            "poster_path": "/if3tAwkchYhpgfUff7g2hR7zKyF.jpg",
+            "release_date": "2003-04-24",
+            "title": "Michael Jackson's Private Home Movies",
+            "video": false,
+            "vote_average": 9.4,
+            "vote_count": 6
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/epJ0LS9m7QDS2SyMOwFtowui9R8.jpg",
+            "genre_ids": [
+                35
+            ],
+            "id": 6984,
+            "original_language": "en",
+            "original_title": "Home Movies",
+            "overview": "A cult guru urges a shy disciple to make life a movie and be its star.",
+            "popularity": 1.92,
+            "poster_path": "/5mmB1mbSHeTH3yFcu66YakVBLMP.jpg",
+            "release_date": "1980-05-16",
+            "title": "Home Movies",
+            "video": false,
+            "vote_average": 5.2,
+            "vote_count": 21
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                99,
+                10402
+            ],
+            "id": 265082,
+            "original_language": "en",
+            "original_title": "Pennywise: Home Movies",
+            "overview": "Documentary of shows and experiences of Southern California's punk rock band.",
+            "popularity": 1.839,
+            "poster_path": "/4FU5Pt42IhqjJ0S2Ht6mtjg07Sd.jpg",
+            "release_date": "1996-04-16",
+            "title": "Pennywise: Home Movies",
+            "video": false,
+            "vote_average": 5,
+            "vote_count": 3
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nZLZ1TYUlZv7b6U2BqYyYGlheSd.jpg",
+            "genre_ids": [
+                16,
+                35
+            ],
+            "id": 646176,
+            "original_language": "en",
+            "original_title": "The Grinch Mini-Movies",
+            "overview": "From Illumination and Universal Pictures Home Entertainment, three new mini-movies from The Grinch. Including \"The Dog Days of Winter\" starring the Grinch and his heroically loyal dog Max; and \"Yellow is the New Black\" and \"Santa’s Little Helpers\", both starring the lovable Minions.",
+            "popularity": 4.602,
+            "poster_path": "/oWxAZjQOeHF95zn4MtXG0gqLvZU.jpg",
+            "release_date": "2018-11-22",
+            "title": "The Grinch Mini-Movies",
+            "video": true,
+            "vote_average": 5,
+            "vote_count": 6
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ddJcIY7jO6qipzvrlBzLXR2APcA.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 722926,
+            "original_language": "en",
+            "original_title": "Skin: A History of Nudity in the Movies",
+            "overview": "The definitive documentary on the history of nudity in feature films from the early silent days to the present, studying the changes in morality that led to the use of nudity in films while emphasizing the political, sociological and artistic changes that shaped that history. Skin will also study the gender inequality in presenting nude images in motion pictures and will follow the revolution that has created nude gender equality in feature films today.",
+            "popularity": 6.661,
+            "poster_path": "/zjQNcvUianPh2qx98hYttIVaeYa.jpg",
+            "release_date": "2020-08-18",
+            "title": "Skin: A History of Nudity in the Movies",
+            "video": false,
+            "vote_average": 7,
+            "vote_count": 26
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/mXpC1096rTJaPanoxp08m8vEeEZ.jpg",
+            "genre_ids": [
+                16,
+                10751,
+                35
+            ],
+            "id": 778370,
+            "original_language": "en",
+            "original_title": "Illumination Presents: 10 Minion Mini-Movies",
+            "overview": "For the first time ever, ALL 10 MINI-MOVIES starring your favorite characters, the Minions, are in one collection! If there's a Minion featured in one of our mini-movies – no matter how big or small – they're in here! Experience the hilarious hijinks when the Minions babysit their caveman boss's troublemaking toddler in Cro-Minion, tune up Agnes's bicycle with high-tech upgrades in Training Wheels, and bring home a new \"dog\" in Puppy. This set includes seven more uproarious mini movies the whole family will love!  The 10 Minion Mini-Movies collection contains: Training Wheels, Cro-Minion, Competition, The Secret Life Of Kyle, Mower Minions, Home Makeover, Orientation Day, Banana, Puppy, and Panic In The Mailroom.",
+            "popularity": 7.503,
+            "poster_path": "/srMx2wGs4f0iUEl4VvEuT8e5SYV.jpg",
+            "release_date": "2019-01-15",
+            "title": "Illumination Presents: 10 Minion Mini-Movies",
+            "video": true,
+            "vote_average": 6,
+            "vote_count": 1
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                35
+            ],
+            "id": 86671,
+            "original_language": "en",
+            "original_title": "Blue Movies",
+            "overview": "The \"slippery\" comedy is about 2 easy-living young men. They decide to make sex films. This adventurous enterprise could be a little complicated but nothing will deter them.",
+            "popularity": 1.742,
+            "poster_path": "/wbC5Ymse7IGO9PiJmtY3juEGz2p.jpg",
+            "release_date": "1988-01-01",
+            "title": "Blue Movies",
+            "video": false,
+            "vote_average": 5.2,
+            "vote_count": 9
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/eTzHSpW714SYoR5fjmjDgC5eNRH.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 55676,
+            "original_language": "en",
+            "original_title": "A Personal Journey with Martin Scorsese Through American Movies",
+            "overview": "Martin Scorsese celebrates American movies from the silent classics to the Hollywood of the seventies.",
+            "popularity": 6.922,
+            "poster_path": "/8yLgV0zrd7u4c4dGqHvRP9MqvSL.jpg",
+            "release_date": "1995-05-21",
+            "title": "A Personal Journey with Martin Scorsese Through American Movies",
+            "video": false,
+            "vote_average": 8.1,
+            "vote_count": 95
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zfN3XS0qIh1eznmddFU09CyFp58.jpg",
+            "genre_ids": [
+                35,
+                10402
+            ],
+            "id": 157382,
+            "original_language": "en",
+            "original_title": "Swingtime in the Movies",
+            "overview": "In this musical short, a waitress at the Warner Bros. commissary gets her big break.",
+            "popularity": 2.488,
+            "poster_path": "/yo2cx7lJnuvZ9pIkSW26oNGKfQ8.jpg",
+            "release_date": "1938-12-24",
+            "title": "Swingtime in the Movies",
+            "video": false,
+            "vote_average": 5.6,
+            "vote_count": 8
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 622205,
+            "original_language": "en",
+            "original_title": "Home Movies",
+            "overview": "Home Movies of Man Ray and Ady Fidelin from 1938. Presents a simple and intimate portrait of the man behind the artist.  Compilation of ten Man Ray films: Ady, Dance, Juliet, Rue Campagne-Première, Corrida, Autoportrait ou Ce qui manque à nous tous, Poison, L’atelier du Val de Grâce, Course landaise, La Garoupe",
+            "popularity": 1.4,
+            "poster_path": "/a1HXILoKh4DvIjfXQRviueZFLac.jpg",
+            "release_date": "1938-01-01",
+            "title": "Home Movies",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/uFrQzihk7W839qne2B7yA3Xr566.jpg",
+            "genre_ids": [
+                35
+            ],
+            "id": 235050,
+            "original_language": "it",
+            "original_title": "Italian Movies",
+            "overview": "",
+            "popularity": 1.4,
+            "poster_path": "/35ldT54ZXWWvfFqVBIY5V19zaEQ.jpg",
+            "release_date": "2013-07-03",
+            "title": "Italian Movies",
+            "video": false,
+            "vote_average": 4.6,
+            "vote_count": 4
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 496306,
+            "original_language": "en",
+            "original_title": "Movies",
+            "overview": "action movies",
+            "popularity": 0.953,
+            "poster_path": null,
+            "title": "Movies",
+            "video": true,
+            "vote_average": 4.2,
+            "vote_count": 27
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/eEAnOXThUJnQlS2ytCqKdV0PeVH.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 36883,
+            "original_language": "en",
+            "original_title": "Midnight Movies: From the Margin to the Mainstream",
+            "overview": "From 1970-1977, six low budget films shown at midnight transformed the way we make and watch films.",
+            "popularity": 3.151,
+            "poster_path": "/pcJHdDK9r2R3ayB5yoNW2uygukP.jpg",
+            "release_date": "2006-06-20",
+            "title": "Midnight Movies: From the Margin to the Mainstream",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 37
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/gyreNaSENrs706pfs2ChFJAbtFb.jpg",
+            "genre_ids": [
+                28,
+                99
+            ],
+            "id": 96578,
+            "original_language": "en",
+            "original_title": "Top Gear: At the Movies",
+            "overview": "Cars! Film! Cars on film! Film involving cars! You get the idea. It’s basically a DVD involving those two things.  Gasp as we find the perfect drift car for a gritty, Bourne Identity-style chase! Cheer as we stage a race for all those unsung heroes of the movie industry! Whoop as we find the car that makes the perfect dramatic exhaust note to dub onto an action sequence! Make some other sort of noise we haven’t thought of yet as we re-attempt the classic Man With The Golden Gun barrel roll, having frankly made a total hash of it when we first tried it on telly! All this plus a vast fleet of sexy supercars and a man with a jet pack racing a Skoda.  Top Gear At The Movies. It’s better than an actual movie. Probably. Actually, it depends on which movie we’re talking about. Truth is, you’d be better judging this on a case-by-case basis. Why not write to us with the name of a film and we’ll tell you whether this DVD is better or not. Actually, on second thoughts, don’t.",
+            "popularity": 2.191,
+            "poster_path": "/i1nm566KEUO4202Jku8sTuz1QiR.jpg",
+            "release_date": "2011-11-14",
+            "title": "Top Gear: At the Movies",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 14
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 984887,
+            "original_language": "en",
+            "original_title": "Movie-Movies",
+            "overview": "Experimental film that used handheld projectors to present film images and slide projections.",
+            "popularity": 1.091,
+            "poster_path": null,
+            "release_date": "1965-01-01",
+            "title": "Movie-Movies",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/4XUoU4iaW6l9KhVAf4QLiBKsB3w.jpg",
+            "genre_ids": [
+                99
+            ],
+            "id": 67800,
+            "original_language": "en",
+            "original_title": "John Carpenter: The Man and His Movies",
+            "overview": "Chronicles the work of cult director John Carpenter through interviews with him and his associates, with emphases on the earlier work.",
+            "popularity": 2.399,
+            "poster_path": "/eqyAfflMkdJltqvAkJUuYtQeF7N.jpg",
+            "release_date": "2004-03-23",
+            "title": "John Carpenter: The Man and His Movies",
+            "video": false,
+            "vote_average": 5.4,
+            "vote_count": 7
+        }
+    ],
+    "total_pages": 21,
+    "total_results": 406
+}
